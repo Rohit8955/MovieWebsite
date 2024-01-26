@@ -1,0 +1,49 @@
+@media screen and (max-width: 760px) {
+    /* Hide the div on screens smaller than 600px */
+    .desktop {
+      visibility: hidden;
+    }
+    .mobile{
+        visibility: visible;
+    }
+}
+@media screen and (min-width: 761px) {
+    /* Hide the div on screens smaller than 600px */
+   
+    .mobile{
+        visibility: hidden;
+    }
+}
+
+.headerclass{
+    position: fixed;
+    transform: translateY(0);
+    width: 100%;
+    height: 60px;
+    z-index: 1;
+    transition: all ease 0.5s;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+}
+
+.switchtab{
+    background: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
+    color: white;
+    transition: all ease-in 0.3s;
+}
+.btn{
+    transition: all ease-in 0.4s;
+}
+
+.boxshadow:hover{
+    box-shadow: 1px 1px 6px 2px  rgb(145, 4, 82);
+}
+.img:hover{
+    height: 350px;
+    width: 237px;
+    background-color: black;
+    opacity: 0.5;
+    inset: 0;
+}

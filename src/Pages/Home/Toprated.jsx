@@ -1,0 +1,53 @@
+import React, { useState } from 'react'
+import Cardtemplate from '../../components/Cardtemplate'
+import { useSelector } from 'react-redux';
+import useFetch from '../../hooks/useFetch'
+import './herobanner/herobanner.scss'
+import Spinner from '../../components/spinner/Spinner';
+const Toprated = () => {
+    const [tab,settab] = useState("movie")
+    
+    const {url} = useSelector((state)=>state.home);
+    const switchtab = (type) =>{
+        if(type==="movie" && tab==="tv"){
+            settab("movie");
+        }
+        else if(type==="tv" && tab==="movie"){
+            settab("tv");
+        }
+    }
+    const {data,loading} = useFetch(`/${tab}/top_rated`)
+    // console.log(data);
+  return (
+    <div>
+        {
+            loading && (<Spinner initial={true}/>)
+        }
+       { !loading && ( <div className='flex flex-col gap-8'>
+        <div className='flex justify-center'>
+            <div className='flex justify-between w-[1000px]'>
+                <h1 className='text-white text-[28px] items-center]'>Top Rated</h1>
+                <div className='w-[220px] flex justify-between gap-0 rounded-full font-[500] text-[18px] bg-white text-black px-2 py-1 overflow-hidden'>
+                    <button className={` ${tab==="movie"?"switchtab":null} w-[110px] py-2 btn rounded-full`} onClick={()=>switchtab("movie")}>Movies</button>
+                    <button className= {` ${tab==="tv" ?"switchtab":null} w-[110px] py-2 btn rounded-full`} onClick={()=>switchtab("tv")}>TV Shows</button>
+                </div>
+            </div>
+        </div>
+            <div className='grid place-items-center'>
+                
+                        <div className=' flex gap-4 w-[1000px] overflow-x-auto overflow-y-hidden '>
+                            {
+                            data?.results?.map((elem,idx)=>{
+                            const path = url.poster + elem?.poster_path;
+                            return <Cardtemplate mediatype={tab} id={elem.id} key={idx} genres={elem?.genre_ids.slice(0,2)} path={path} rating={elem?.vote_average} name={elem?.name} title={elem?.title} tvdate={elem?.first_air_date} date={elem?.release_date}/>
+                            })
+                            }
+                        </div>
+                    
+            </div>
+        </div>)}
+        </div>
+  )
+}
+
+export default Toprated
