@@ -26,7 +26,7 @@ const Popular = () => {
                 <h1 className='text-white text-[22px] md:text-[28px] items-center]'>Popular</h1>
                 <div className='w-[140px] md:w-[220px] flex justify-between gap-0 rounded-full font-[500] text-[14px] md:text-[18px] bg-white text-black px-2 py-1 overflow-hidden'>
                     <button className={` ${tab==="movie"?"switchtab":null} w-[70px] md:w-[110px] py-2 btn rounded-full`} onClick={()=>switchtab("movie")}>Movie</button>
-                    <button className= {` ${tab==="tv" ?"switchtab":null} w-[70px] md:w-[110px] py-2 btn rounded-full`} onClick={()=>switchtab("tv")}>TV Shows</button>
+                    <button className= {` ${tab==="tv" ?"switchtab":null} w-[70px] md:w-[110px] py-2 btn rounded-full`} onClick={()=>switchtab("tv")}>Shows</button>
                 </div>
             </div>
           </div>
