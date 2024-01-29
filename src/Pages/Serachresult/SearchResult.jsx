@@ -66,7 +66,7 @@ console.log(data)
             (
               <div className='flex flex-col px-2 items-center justify-center gap-[30px] md:px-0'>
               <h1 className='text-white text-[18px]  w-full md:w-[1240px] md:text-[24px] '>Search results for {`' ${query} '`}</h1>
-              <InfiniteScroll dataLength={data?.results?.length || []} next={fetchNextPageData} hasMore={pagenum<=data?.total_pages} loader={<Spinner/>} className='grid w-full md:px-0 px-[6px] md:w-[1240px] grid-cols-2 gap-y-2 md:gap-y-0 gap-x-[12px] md:gap-x-[7px]  md:grid-cols-5'>
+              <InfiniteScroll dataLength={data?.results?.length || []} next={fetchNextPageData} hasMore={pagenum<=data?.total_pages} loader={<Spinner/>} className='grid w-full md:px-0 px-[6px] md:w-[1240px] grid-cols-2 gap-y-[4px] md:gap-y-0 gap-x-[12px] md:gap-x-[7px]  md:grid-cols-5'>
                 {
                   data?.results.map((elem,idx)=>{
                     const path = url.poster + elem?.poster_path
@@ -75,10 +75,10 @@ console.log(data)
                     const newrate = rate.slice(0,3);
                     return (
                       <NavLink link to={`/${elem?.media_type}/${elem?.id}`}>
-                          <div className='flex flex-col h-[320px] md:h-[470px] gap-[16px] md:gap-8 relative rounded-md '>
+                          <div className='flex flex-col h-[320px] md:h-[470px] gap-[16px] md:gap-8 relative '>
                               <div className=' min-h-[250px] max-h-[250px] min-w-[155px]  md:min-h-[350px] md:min-w-[237px] overflow-hidden rounded-md hover:cursor-pointer relative '>
                                   
-                                  <img className=' min-h-full  md:h-[350px] w-full object-contain md:object-cover rounded-md md:img ' src={elem?.poster_path?path:noposterimg} alt="" />
+                                  <img className=' min-h-full  md:h-[350px] w-full object-contain md:object-cover  md:img ' src={elem?.poster_path?path:noposterimg} alt="" />
                                   
                               </div>
                               <div className=' absolute w-[30px] md:w-[50px] bottom-[60px] left-3 md:left-3 md:bottom-[96px]'><CircularProgressbar  maxValue={10}   value={rating} text={newrate} className=' p-[2px] rounded-[50%] font-[700] bg-white'
