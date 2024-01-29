@@ -62,7 +62,7 @@ console.log(data)
             (
               <div className='flex flex-col px-1 items-center justify-center gap-[30px]'>
                 <h1 className='text-white text-[18px] w-full md:w-[1240px] md:text-[24px] '>Search results for {`${query}`}</h1>
-              <InfiniteScroll dataLength={data?.results?.length || []} next={fetchNextPageData} hasMore={pagenum<=data?.total_pages} loader={<Spinner/>} className='grid w-full md:w-[1240px] grid-cols-3 gap-x-[6px] md:gap-x-[7px]  md:grid-cols-5'>
+              <InfiniteScroll dataLength={data?.results?.length || []} next={fetchNextPageData} hasMore={pagenum<=data?.total_pages} loader={<Spinner/>} className='grid w-full md:w-[1240px] grid-cols-2 gap-x-[4px] md:gap-x-[7px]  md:grid-cols-5'>
                 {
                   data?.results.map((elem,idx)=>{
                     const path = url.poster + elem?.poster_path

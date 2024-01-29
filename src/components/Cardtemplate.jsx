@@ -16,7 +16,7 @@ const Cardtemplate = (props) => {
   return (
     <NavLink link to={`/${mediatype}/${id}`}>
 <div className='flex flex-col h-[270px] md:h-[470px] gap-3 md:gap-8 relative rounded-md '>
-    <div className=' min-h-[190px] min-w-[110px] md:min-h-[350px]   md:min-w-[237px] overflow-hidden rounded-md hover:cursor-pointer relative '>
+    <div className=' min-h-[190px] min-w-[135px] md:min-h-[350px]   md:min-w-[237px] overflow-hidden rounded-md hover:cursor-pointer relative '>
         {/* <Img src={props.path}/> */}
         <img className=' h-[190px]  md:h-[350px] w-full object-contain md:object-cover rounded-md md:img ' src={props.path} alt="" />
          { props.genres && (<div className='genre'><Genres data={props.genres}/></div>)}
