@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import image from './../../../movix-logo.svg'
 import './header.scss'
+import './../../App.css'
 const Header = () => {
 
   const [showmenu, setshowmenu] = useState(false);
@@ -13,7 +14,7 @@ const Header = () => {
 
   return (
     
-    <div className='flex justify-between items-center px-[70px] headerclass top-0'>
+    <div className='flex justify-between items-center md:px-[70px] headerclass top-0'>
       <NavLink link to={'/'} ><img className='w-[100px] md:w-[160px]' src={image} alt="" /></NavLink>
       <div className='text-white flex gap-5 text-[18px]'>
 

@@ -68,9 +68,9 @@ const HeroBanner = () => {
           <h4 className='text-[18px] md:text-[25px]'>Millions of movies, TV shows and people to discover. Explore now.</h4>
         </div>
 
-        <div className='w-[100px] md:w-[730px] h-[] md:h-[56px] rounded-full bg-white overflow-hidden flex gap-0'>
-          <input className='w-[60%] md:w-[75%] outline-none text-[19px] ml-[40px] h-full' type="text" placeholder='Search for a movie or tv show...' onChange={(e)=>setquery(e.target.value)} onKeyUp={(e)=>enterclicked(e)} />
-          <button className='w-[] md:w-[20%] h-full btnbgclr text-white font-[500] md:text-[20px] ' onClick={handleclicked} >Search</button>
+        <div className='w-[400px] md:w-[730px] h-[40px] md:h-[56px] rounded-full bg-white overflow-hidden flex gap-0'>
+          <input className='w-[75%] md:w-[75%] outline-none md:text-[19px] ml-[40px] h-full' type="text" placeholder='Search for a movie or tv show...' onChange={(e)=>setquery(e.target.value)} onKeyUp={(e)=>enterclicked(e)} />
+          <button className='w-[20%] md:w-[20%] h-full btnbgclr text-white font-[500] md:text-[20px] ' onClick={handleclicked} >Search</button>
         </div> 
       </div>
 

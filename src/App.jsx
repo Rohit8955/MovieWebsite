@@ -10,6 +10,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer'
 import { useDispatch, useSelector } from 'react-redux';
 import {getApiConfiguration,getGenres} from './store/homeslice'
+import './App.css'
 
 function App() {
 
