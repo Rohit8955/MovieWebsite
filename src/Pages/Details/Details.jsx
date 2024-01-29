@@ -42,15 +42,15 @@ const Details = () => {
     return `${hrs}h ${mins>0?`${mins}m`:""}`
   }
   return (
-    <div  className='text-white w-full flex flex-col gap-[30px]'>
+    <div  className='text-white w-full flex flex-col  gap-[30px]'>
       <div className='relative'>
-        <img className='w-full h-[700px]' src={data?.backdrop_path!==null?backdroppath:null} alt="" />
+        <img className='w-full h-[500px] posterimg md:h-[700px]' src={data?.backdrop_path!==null?backdroppath:null} alt="" />
         <div className='w-full absolute inset-0 opacity-80' style={{background:"#04152d"}}></div>
         <div className='absolute opacity-layer' ></div>
 
         <div className='w-full h-full top-0 left-0 absolute flex items-center justify-center gap-[45px]'>
           {/* //poster section */}
-          <img className='w-[320px] h-[500px] rounded-md' src={posterpath} alt="" />
+          <img className=' w-[320px] h-[500px] rounded-md' src={posterpath} alt="" />
 
           <div className=' w-[600px] flex flex-col gap-4'>
 

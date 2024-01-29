@@ -60,9 +60,9 @@ console.log(data)
           {
             data?.results?.length>0?
             (
-              <div className='flex flex-col items-center justify-center gap-[30px]'>
-                <h1 className='text-white d w-[1240px] text-[24px] '>Search results for {query}...</h1>
-              <InfiniteScroll dataLength={data?.results?.length || []} next={fetchNextPageData} hasMore={pagenum<=data?.total_pages} loader={<Spinner/>} className='grid w-[1240px] grid-cols-5'>
+              <div className='flex flex-col px-1 items-center justify-center gap-[30px]'>
+                <h1 className='text-white text-[17px] w-full md:w-[1240px] md:text-[24px] '>Search results for {query}...</h1>
+              <InfiniteScroll dataLength={data?.results?.length || []} next={fetchNextPageData} hasMore={pagenum<=data?.total_pages} loader={<Spinner/>} className='grid w-full md:w-[1240px] grid-cols-3 gap-x-[2px]  md:grid-cols-5'>
                 {
                   data?.results.map((elem,idx)=>{
                     const path = url.poster + elem?.poster_path
@@ -73,8 +73,8 @@ console.log(data)
               </div>
             ):(
               <div className='flex items-center justify-center'>
-                <img className='h-[500px]' src={noresultimg} alt="" />
-                <h1 className='text-white text-[24px] font-[600]'>Sorry! Result not found</h1>
+                <img className='h-[300px] md:h-[500px]' src={noresultimg} alt="" />
+                <h1 className='text-white text-[18px] md:text-[24px] font-[600]'>Sorry! Result not found</h1>
               </div>
             )
           }
