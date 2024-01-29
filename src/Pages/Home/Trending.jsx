@@ -21,30 +21,32 @@ const Trending = () => {
     // console.log(data)
   return (
     <div>
-      {
-        loading && (<Spinner initial={true}/>)
-      }
-      {!loading && (<div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-8'>
         <div className='flex justify-center '>
           <div className='flex justify-between item-center w-full px-[20px] md:px-0 md:w-[1000px]'>
               <h1 className='text-white text-[22px] md:text-[28px] items-center]'>Trending</h1>
-              <div className='w-[160px] md:w-[220px] flex justify-between gap-0 rounded-full font-[500] text-[14px] md:text-[18px] bg-white text-black px-2 py-1 overflow-hidden'>
-                  <button className={` ${tab==="day"?"switchtab":null} w-[80px] md:w-[110px] py-2 btn rounded-full`} onClick={()=>switchtab("day")}>Day</button>
-                  <button className= {` ${tab==="week" ?"switchtab":null} w-[80px] md:w-[110px] py-2 btn rounded-full`} onClick={()=>switchtab("week")}>Week</button>
+              <div className='w-[140px] md:w-[220px] flex justify-between gap-0 rounded-full font-[500] text-[14px] md:text-[18px] bg-white text-black px-2 py-1 overflow-hidden'>
+                  <button className={` ${tab==="day"?"switchtab":null} w-[70px] md:w-[110px] py-2 btn rounded-full`} onClick={()=>switchtab("day")}>Day</button>
+                  <button className= {` ${tab==="week" ?"switchtab":null} w-[70px] md:w-[110px] py-2 btn rounded-full`} onClick={()=>switchtab("week")}>Week</button>
               </div>
           </div>
         </div>
           <div className='grid place-items-center px-[20px] md:px-0'>
-            <div className=' flex gap-4 w-full md:w-[1000px] overflow-x-auto overflow-y-hidden '>
+          {
+              loading && (<Spinner initial={true}/>)
+          }
+          { !loading &&
+            <div className=' flex gap-1 md:gap-4 w-full md:w-[1000px] overflow-x-auto overflow-y-hidden '>
             {
               data?.results?.map((elem,idx)=>{
                 const path = url.poster + elem?.poster_path;
                 return <Cardtemplate key={idx} mediatype="movie" id={elem.id} genres={elem?.genre_ids.slice(0,2)} path={path} rating={elem?.vote_average} name={elem?.title} date={elem?.release_date}/>
               })
             }
+            </div>
+          } 
           </div>
-          </div>
-      </div>)}
+      </div>
       </div>
   )
 }
