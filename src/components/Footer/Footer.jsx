@@ -10,7 +10,7 @@ const Footer = () => {
           <h4 className='hover:cursor-pointer hover:text-pink-600 text-[13px] md:text-[16px]'>Blog</h4>
           <h4 className='hover:cursor-pointer hover:text-pink-600 text-[13px] md:text-[16px]'>FAQ</h4>
        </div>
-       <p className='text-center text-[12px] md:text-[16px] text-gray-500 w-[450px] md:w-[750px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+       <p className='text-center text-[12px] md:text-[16px] text-gray-500 w-[370px] md:w-[750px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
        <div className='flex gap-6'>
           <i className="p-3 px-[15px] hover:cursor-pointer boxshadow rounded-full hover:text-pink-600 text-[17px] fa-brands fa-facebook-f" style={{backgroundColor:"#04152d"}}></i>
           <i className="p-3 px-[13px] hover:cursor-pointer boxshadow rounded-full hover:text-pink-600 text-[17px] fa-brands fa-instagram" style={{backgroundColor:"#04152d"}}></i>
