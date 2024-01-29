@@ -55,17 +55,17 @@ const HeroBanner = () => {
   return (
     <div className='relative'>
       {/* <h1 className='md:text-white'>hii i am heroo banner</h1> */}
-      <Img className='w-screen object-cover object-center h-[300px] md:h-[650px] ' src={background} />
+      <Img className='w-screen object-cover object-center h-[350px] md:h-[650px] ' src={background} />
        
-       <div className=' absolute h-[300px] md:h-[650px] inset-0 bg-black opacity-60 '></div>
+       <div className=' absolute h-[350px] md:h-[650px] inset-0 bg-black opacity-60 '></div>
        <div className='opacity-layer'></div>
 
        {/* <Movies obj={data?.results?.[index-1]}  /> */}
 
       <div className='absolute top-0 left-0 h-[300px] md:h-[650px] w-screen flex flex-col gap-6 justify-center items-center text-center'>
         <div className='text-white font-[500]'>
-          <h1 className='text-[32px] md:text-[85px] font-[600]'>Welcome.</h1>
-          <h4 className='text-[14px] w-[350px] md:w-[650px] md:text-[25px]'>Millions of movies, TV shows and people to discover. Explore now.</h4>
+          <h1 className='text-[36px] md:text-[85px] font-[600]'>Welcome.</h1>
+          <h4 className='text-[15px] w-[350px] md:w-[650px] md:text-[25px]'>Millions of movies, TV shows and people to discover. Explore now.</h4>
         </div>
 
         <div className='w-[300px] md:w-[730px] h-[40px] md:h-[56px] rounded-full bg-white overflow-hidden flex gap-0'>

@@ -7,7 +7,7 @@ import Toprated from './Toprated'
 
 const Home = () => {
   return (
-    <div className='flex flex-col gap-4 md:gap-9'>
+    <div className='flex flex-col gap-1 md:gap-9'>
       <HeroBanner/>
       <Trending/>
       <Popular/>
