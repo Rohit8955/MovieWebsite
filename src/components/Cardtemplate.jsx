@@ -15,10 +15,10 @@ const Cardtemplate = (props) => {
     const id = props.id;
   return (
     <NavLink link to={`/${mediatype}/${id}`}>
-<div className='flex flex-col h-[300px] md:h-[470px] gap-8 relative rounded-md '>
-    <div className=' h-[250px] w-[180px] md:min-h-[350px]   md:min-w-[237px] overflow-hidden rounded-md hover:cursor-pointer relative '>
+<div className='flex flex-col h-[230px] md:h-[470px] gap-8 relative rounded-md '>
+    <div className=' min-h-[180px] min-w-[180px] md:min-h-[350px]   md:min-w-[237px] overflow-hidden rounded-md hover:cursor-pointer relative '>
         {/* <Img src={props.path}/> */}
-        <img className=' h-[150px] md:h-[350px] w-full rounded-md img ' src={props.path} alt="" />
+        <img className=' h-full  md:h-[350px] w-full object-contain md:object-cover rounded-md img ' src={props.path} alt="" />
          {props.genres && <Genres data={props.genres}/>}
     </div>
     <div className=' absolute w-[50px] left-3 bottom-[96px]'><CircularProgressbar  maxValue={10}   value={props.rating} text={newrate} className=' p-[2px] rounded-[50%] font-[700] bg-white'

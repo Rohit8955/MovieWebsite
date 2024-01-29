@@ -65,7 +65,7 @@ const HeroBanner = () => {
       <div className='absolute top-0 left-0 h-[300px] md:h-[650px] w-screen flex flex-col gap-6 justify-center items-center text-center'>
         <div className='text-white font-[500]'>
           <h1 className='text-[32px] md:text-[85px] font-[600]'>Welcome.</h1>
-          <h4 className='text-[14px] w-[350px] md:text-[25px]'>Millions of movies, TV shows and people to discover. Explore now.</h4>
+          <h4 className='text-[14px] w-[350px] md:w-[650px] md:text-[25px]'>Millions of movies, TV shows and people to discover. Explore now.</h4>
         </div>
 
         <div className='w-[300px] md:w-[730px] h-[40px] md:h-[56px] rounded-full bg-white overflow-hidden flex gap-0'>

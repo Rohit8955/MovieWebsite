@@ -34,8 +34,8 @@ const Trending = () => {
               </div>
           </div>
         </div>
-          <div className='grid place-items-center'>
-            <div className=' flex gap-4 w-full px-[20px] md:px-0 md:w-[1000px] overflow-x-auto overflow-y-hidden '>
+          <div className='grid place-items-center px-[20px] md:px-0'>
+            <div className=' flex gap-4 w-full md:w-[1000px] overflow-x-auto overflow-y-hidden '>
             {
               data?.results?.map((elem,idx)=>{
                 const path = url.poster + elem?.poster_path;
