@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     
-    <div className='flex justify-between items-center md:px-[70px] headerclass top-0'>
+    <div className='flex justify-between items-center px-[20px] md:px-[70px] headerclass top-0'>
       <NavLink link to={'/'} ><img className='w-[100px] md:w-[160px]' src={image} alt="" /></NavLink>
       <div className='text-white flex gap-5 text-[18px]'>
 

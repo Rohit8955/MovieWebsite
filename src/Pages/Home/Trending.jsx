@@ -27,7 +27,7 @@ const Trending = () => {
       {!loading && (<div className='flex flex-col gap-8'>
         <div className='flex justify-center'>
           <div className='flex justify-between w-[1000px]'>
-              <h1 className='text-white text-[28px] items-center]'>Trending</h1>
+              <h1 className='text-white text-[22px] md:text-[28px] items-center]'>Trending</h1>
               <div className='w-[220px] flex justify-between gap-0 rounded-full font-[500] text-[18px] bg-white text-black px-2 py-1 overflow-hidden'>
                   <button className={` ${tab==="day"?"switchtab":null} w-[110px] py-2 btn rounded-full`} onClick={()=>switchtab("day")}>Day</button>
                   <button className= {` ${tab==="week" ?"switchtab":null} w-[110px] py-2 btn rounded-full`} onClick={()=>switchtab("week")}>Week</button>
