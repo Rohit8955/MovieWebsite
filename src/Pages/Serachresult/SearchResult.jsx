@@ -64,24 +64,24 @@ console.log(data)
           {
             data?.results?.length>0?
             (
-              <div className='flex flex-col px-1 items-center justify-center gap-[30px]'>
-                <h1 className='text-white text-[18px] w-full md:w-[1240px] md:text-[24px] '>Search results for {`${query}`}</h1>
-              <InfiniteScroll dataLength={data?.results?.length || []} next={fetchNextPageData} hasMore={pagenum<=data?.total_pages} loader={<Spinner/>} className='grid w-full md:px-0 px-[6px] md:w-[1240px] grid-cols-2 gap-y-3 md:gap-y-0 gap-x-[8px] md:gap-x-[7px]  md:grid-cols-5'>
+              <div className='flex flex-col px-2 items-center justify-center gap-[30px] md:px-0'>
+              <h1 className='text-white text-[18px]  w-full md:w-[1240px] md:text-[24px] '>Search results for {`' ${query} '`}</h1>
+              <InfiniteScroll dataLength={data?.results?.length || []} next={fetchNextPageData} hasMore={pagenum<=data?.total_pages} loader={<Spinner/>} className='grid w-full md:px-0 px-[6px] md:w-[1240px] grid-cols-2 gap-y-3 md:gap-y-0 gap-x-[12px] md:gap-x-[7px]  md:grid-cols-5'>
                 {
                   data?.results.map((elem,idx)=>{
                     const path = url.poster + elem?.poster_path
                     const rating = elem?.vote_average;
                     const rate = ("" + rating);
-                    const newrate = rate.slice(0,2);
+                    const newrate = rate.slice(0,3);
                     return (
                       <NavLink link to={`/${elem?.media_type}/${elem?.id}`}>
-                          <div className='flex flex-col h-[320px] md:h-[470px] gap-2 md:gap-8 relative rounded-md '>
-                              <div className=' min-h-[250px] min-w-[155px]  md:min-h-[350px] md:min-w-[237px] overflow-hidden rounded-md hover:cursor-pointer relative '>
+                          <div className='flex flex-col h-[320px] md:h-[470px] gap-[16px] md:gap-8 relative rounded-md '>
+                              <div className=' min-h-[250px] max-h-[250px] min-w-[155px]  md:min-h-[350px] md:min-w-[237px] overflow-hidden rounded-md hover:cursor-pointer relative '>
                                   
                                   <img className=' min-h-full  md:h-[350px] w-full object-contain md:object-cover  rounded-md md:img ' src={elem?.poster_path?path:noposterimg} alt="" />
                                   
                               </div>
-                              <div className=' absolute w-[30px] md:w-[50px] bottom-[68px] left-5 md:left-3 md:bottom-[96px]'><CircularProgressbar  maxValue={10}   value={rating} text={rate} className=' p-[2px] rounded-[50%] font-[700] bg-white'
+                              <div className=' absolute w-[30px] md:w-[50px] bottom-[55px] left-3 md:left-3 md:bottom-[96px]'><CircularProgressbar  maxValue={10}   value={rating} text={newrate} className=' p-[2px] rounded-[50%] font-[700] bg-white'
                               styles={buildStyles({textSize:"34px",textColor:"black",pathColor: rating < 5 ? "red" : rating < 7 ? "orange" : "green",})} /></div>
                               {/* <p className='absolute left-3 bottom-[55px] z-auto text-black font-[600] border-[3px] border-green-600 w-[55px] rounded-full py-4 px-1 text-center overflow-hidden  bg-white'>{newrate}</p> */}
                             <div className='text-white  flex flex-col gap-1 md:gap-2'>
