@@ -37,7 +37,7 @@ const Header = () => {
 
     {
       showmenu &&(
-        <div className=' flex flex-col gap-3 w-full absolute top-[60px] z-10 px-4 py-[8px] text-[16px] text-white bg-black'>
+        <div className=' flex flex-col gap-3 w-full absolute top-[60px] z-10 px-4 py-[8px] text-[16px] text-white' style={{background:"rgba(0, 0, 0, 0.25)"}}>
           <NavLink link to={'/explore/movie'}><h4 className='cursor-pointer hover:text-pink-500' >Movies</h4></NavLink>
           <NavLink link to={'/explore/tv'}><h4 className='cursor-pointer hover:text-pink-500' >TV Shows</h4></NavLink>
           {/* <i className="fa-solid fa-magnifying-glass cursor-pointer"></i> */}
