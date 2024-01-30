@@ -8,6 +8,11 @@ import { fetchDataFromApi } from "../../utils/api";
 import Spinner from "../../components/spinner/Spinner";
 import Cardtemplate from "../../components/Cardtemplate";
 import MovieCard from "../../components/moviecard/MovieCard";
+import dayjs from "dayjs";
+import { NavLink } from "react-router-dom";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import noposterimg from './../../../no-poster.png'
 import { useSelector } from "react-redux";
 
 let filters = {};
@@ -96,9 +101,9 @@ const Explore = () => {
   return (
     
     <div className="explorePage">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-5">
               <div className="flex items-center justify-center">
-                <div className="pageHeader w-[1265px]">
+                <div className="pageHeader w-[450px] px-3 md:px-0 md:w-[1265px]">
                     <div className="pageTitle">
                         {mediaType === "tv"
                             ? "Explore TV Shows"
@@ -133,23 +138,42 @@ const Explore = () => {
                 </div>
                 {loading && <Spinner initial={true} />}
                 {!loading && (
-                  <div className="flex items-center justify-center">
-                    <div className="w-[1265px]">
-                        {data?.results?.length > 0 ? (
+                  <div className="grid place-items-center md:px-0 px-3">
+                    <div className="md:w-[1265px]">
+                        {data?.results?.length > 0 ? ( 
                             <InfiniteScroll
-                                className="content"
+                                className="grid w-full gap-[10px] grid-cols-2 md:grid-cols-5"
                                 dataLength={data?.results?.length || []}
                                 next={fetchNextPageData}
                                 hasMore={pageNum <= data?.total_pages}
                                 loader={<Spinner />}
                             >
-                                {data?.results?.map((item, index) => {
-                                    if (item.media_type === "person") return;
-                                    const path = url.poster + item?.poster_path;
+                                {data?.results?.map((elem, index) => {
+                                    if (elem?.media_type === "person") return;
+                                    const path = url.poster + elem?.poster_path;
+                                    const rating = elem?.vote_average;
+                                    const rate = (""+rating);
+                                    const newrate = rate.slice(0,3);
+                                    let name = elem?.name;
+                                    if(!name) name = elem?.title
                                     return (
                                       
-                                        <Cardtemplate key={index} genres={item?.genre_ids.slice(0,2)} path={path} name={item?.name} title={item?.title} rating={item?.vote_average} date={item?.release_date} tvdate={item?.first_air_date} mediatype={mediaType} id={item?.id} 
-                                        />
+                                        <NavLink link to={`/${elem?.media_type}/${elem?.id}`}>
+                                            <div className='flex flex-col h-[320px] md:h-[470px] gap-[16px] md:gap-8 relative '>
+                                                <div className=' min-h-[250px] max-h-[250px] min-w-[155px]  md:min-h-[350px] md:min-w-[237px] overflow-hidden rounded-md hover:cursor-pointer relative '>
+                                                    
+                                                    <img className=' min-h-[250px]  md:min-h-[350px] w-full md:img ' src={elem?.poster_path?path:noposterimg} alt="" />
+                                                    
+                                                </div>
+                                                <div className=' absolute w-[40px] md:w-[50px] bottom-[55px] left-3 md:left-3 md:bottom-[96px]'><CircularProgressbar  maxValue={10}   value={rating} text={newrate} className=' p-[2px] rounded-[50%] font-[700] bg-white'
+                                                styles={buildStyles({textSize:"34px",textColor:"black",pathColor: rating < 5 ? "red" : rating < 7 ? "orange" : "green",})} /></div>
+                                                {/* <p className='absolute left-3 bottom-[55px] z-auto text-black font-[600] border-[3px] border-green-600 w-[55px] rounded-full py-4 px-1 text-center overflow-hidden  bg-white'>{newrate}</p> */}
+                                                <div className='text-white  flex flex-col gap-1 md:gap-2'>
+                                                <h4 className='text-[14px] md:text-[21px]'>{name}</h4>
+                                                <h4 className=' text-[12px] md:text-[13px] text-gray-400'>{dayjs(elem?.release_date || elem?.first_air_date).format("MMM D, YYYY")}</h4>
+                                                </div>
+                                            </div>  
+                                        </NavLink>
                                     
                                         
                                     )
