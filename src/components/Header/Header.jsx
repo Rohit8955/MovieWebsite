@@ -13,7 +13,7 @@ const Header = () => {
   }
 
   return (
-    
+    <div className='relative'>
     <div className='flex justify-between w-full items-center px-[20px] md:px-[70px] headerclass top-0'>
       <NavLink link to={'/'} ><img className='w-[100px] md:w-[160px]' src={image} alt="" /></NavLink>
       <div className='text-white flex gap-5 text-[18px]'>
@@ -26,17 +26,24 @@ const Header = () => {
         </div>
 
         {/* for mobile */}
-        <div className='mobile flex gap-5 items-center' >
+        <div className='mobile ' >
           {
-            showmenu === true ? (<i class="fa-solid fa-x" onClick={menuclicked}></i>) : (<i class="fa-solid fa-bars" onClick={menuclicked}></i>)
+            showmenu === true ? (
+              <i class="fa-solid fa-x" onClick={menuclicked}></i>) : (<i class="fa-solid fa-bars" onClick={menuclicked}></i>)
           }
-         {/* {  <i className="fa-solid fa-magnifying-glass cursor-pointer"></i>} */}
         </div>
       </div>
     </div>
-    
-    
-    
+
+    {
+      showmenu &&(
+        <div className=' flex flex-col gap-3 w-full mt-[60px] px-4 py-[8px] text-[16px] text-white' style={{background:"rgba(0, 0, 0, 0.25)"}}>
+          <NavLink link to={'/explore/movie'}><h4 className='cursor-pointer hover:text-pink-500' >Movies</h4></NavLink>
+          <NavLink link to={'/explore/tv'}><h4 className='cursor-pointer hover:text-pink-500' >TV Shows</h4></NavLink>
+          {/* <i className="fa-solid fa-magnifying-glass cursor-pointer"></i> */}
+        </div>
+      )
+    }</div>
   )
 }
 
