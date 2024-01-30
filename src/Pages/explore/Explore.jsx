@@ -158,7 +158,7 @@ const Explore = () => {
                                     if(!name) name = elem?.title
                                     return (
                                       
-                                        <NavLink link to={`/${elem?.media_type}/${elem?.id}`}>
+                                        <NavLink link to={`/${mediaType}/${elem?.id}`} key={index}>
                                             <div className='flex flex-col h-[320px] md:h-[470px] gap-[16px] md:gap-8 relative '>
                                                 <div className=' min-h-[250px] max-h-[250px] min-w-[155px]  md:min-h-[350px] md:min-w-[237px] overflow-hidden rounded-md hover:cursor-pointer relative '>
                                                     
