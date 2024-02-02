@@ -26,7 +26,7 @@ const Cardtemplate = (props) => {
           styles={buildStyles({textSize:"34px",textColor:"black",pathColor: props.rating < 5 ? "red" : props.rating < 7 ? "orange" : "green",})} /></div>
           {/* <p className='absolute left-3 bottom-[55px] z-auto text-black font-[600] border-[3px] border-green-600 w-[55px] rounded-full py-4 px-1 text-center overflow-hidden  bg-white'>{newrate}</p> */}
           <div className='text-white  flex flex-col gap-1 md:gap-2'>
-            <h4 className='text-[14px] md:text-[21px]'>{naming}</h4>
+            <h4 className='text-[16px] md:text-[21px]'>{naming}</h4>
             <h4 className=' text-[12px] md:text-[13px] text-gray-400'>{dayjs(props.date || props.tvdate).format("MMM D, YYYY")}</h4>
           </div>
       </div>  

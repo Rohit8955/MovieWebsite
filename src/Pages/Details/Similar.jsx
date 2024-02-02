@@ -11,8 +11,8 @@ const Similar = ({mediatype,id}) => {
     if(mediatype==="movie") title="Movies"
     console.log(data);
   return data?.results?.length>0 && (
-    <div className='flex flex-col gap-[32px] font-[500]'>
-        <h1 className='text-[28px]'>Similar {title}</h1>
+    <div className='flex flex-col gap-5 md:gap-[32px] font-[500]'>
+        <h1 className='text-[24px] md:text-[28px]'>Similar {title}</h1>
     <div className='md:w-[990px] flex gap-3 overflow-x-auto '>
       {
         data?.results?.map((elem,idx)=>{
