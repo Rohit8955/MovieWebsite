@@ -43,17 +43,17 @@ const Details = () => {
     return `${hrs}h ${mins>0?`${mins}m`:""}`
   }
   return (
-    <div  className='text-white w-full flex flex-col  gap-[30px]'>
+    <div  className='text-white w-full relative'>
       <div className='relative'>
-        <img className='w-full h-[500px] posterimg md:h-[700px]' src={data?.backdrop_path!==null?backdroppath:null} alt="" />
+        <img className='w-full h-[400px] posterimg md:h-[700px]' src={data?.backdrop_path?backdroppath:null} alt="" />
         <div className='w-full absolute inset-0 opacity-80' style={{background:"#04152d"}}></div>
         <div className='absolute opacity-layer' ></div>
 
-        <div className='w-full h-full top-0 left-0 absolute flex items-center justify-center gap-[45px]'>
+        <div className='w-full h-full md:top-0 top-[65px] px-[10px] md:px-0 left-0 absolute flex flex-col md:flex-row items-center md:justify-center md:gap-[45px]'>
           {/* //poster section */}
-          <img className=' w-[320px] h-[500px] rounded-md' src={posterpath} alt="" />
+          <img className=' md:w-[320px] md:h-[500px] rounded-md' src={posterpath} alt="" />
 
-          <div className=' w-[600px] flex flex-col gap-4'>
+          <div className=' w-full md:w-[600px] flex flex-col gap-4'>
 
             {/* //title or name section */}
             <h1 className='text-[32px] font-[600]'>{data?.name || data?.title}</h1>
@@ -130,10 +130,12 @@ const Details = () => {
           </div>
         </div>
       </div>
-      <div className='w-full flex items-center justify-center'><TopCast casts={credits} /></div>
-      <div className='w-full flex items-center justify-center'><Videos data={videos}/></div>
-      <div className='w-full flex items-center justify-center '> <Similar mediatype={mediaType} id={id}/></div>
-      <div className='flex items-center justify-center'><Recomended mediatype={mediaType} id={id}/></div>
+      <div className='flex positioning w-full flex-col gap-[20px] md:gap-[30px] md:px-0 px-[10px]'>
+          <div className='w-full md:flex md:items-center md:justify-center'><TopCast casts={credits} /></div>
+          <div className='w-full md:flex md:items-center md:justify-center'><Videos data={videos}/></div>
+          <div className='w-full md:flex md:items-center md:justify-center '> <Similar mediatype={mediaType} id={id}/></div>
+          <div className=' w-full md:flex md:items-center md:justify-center'><Recomended mediatype={mediaType} id={id}/></div>
+      </div>
     </div>
   )
 }

@@ -38,10 +38,13 @@ const Header = () => {
     {
       showmenu &&(
        
-        <div className=' flex flex-col gap-4 absolute mobileheader w-full top-[60px] z-10   px-4 py-[24px] text-[18px] text-white'  >
+        <div className=' flex flex-col gap-4 absolute mobileheader w-full top-[60px] z-10 px-4 py-[24px] text-[18px] text-white'  >
           <NavLink link to={'/explore/movie'}><h4 className='cursor-pointer hover:text-pink-500' >Movies</h4></NavLink>
           <NavLink link to={'/explore/tv'}><h4 className='cursor-pointer hover:text-pink-500' >TV Shows</h4></NavLink>
-          {/* <i className="fa-solid fa-magnifying-glass cursor-pointer"></i> */}
+          {/* <div className='flex gap-2'>
+            <i className="fa-solid fa-magnifying-glass cursor-pointer"></i>
+            <h4>Search</h4>
+          </div> */}
         </div>
       )
     }

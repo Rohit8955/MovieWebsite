@@ -8,9 +8,9 @@ const Videos = ({data}) => {
     console.log(data)
   return (
     <div>
-        {data?.results.length>0 && (<div className='flex flex-col gap-7'>
+        {data?.results.length>0 && (<div className='flex flex-col gap-3 md:gap-7'>
           <h1 className='text-[28px]'>Official Videos</h1>
-          <div className='w-[965px] flex gap-4 overflow-x-auto'>
+          <div className='md:w-[965px] w-full flex gap-4 overflow-x-auto'>
             {
               data?.results?.map((elem,idx)=>{
                 return (

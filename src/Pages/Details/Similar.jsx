@@ -13,7 +13,7 @@ const Similar = ({mediatype,id}) => {
   return data?.results?.length>0 && (
     <div className='flex flex-col gap-[32px] font-[500]'>
         <h1 className='text-[28px]'>Similar {title}</h1>
-    <div className='w-[990px] flex gap-3 overflow-x-auto '>
+    <div className='md:w-[990px] flex gap-3 overflow-x-auto '>
       {
         data?.results?.map((elem,idx)=>{
             const path = url.poster + elem?.poster_path
