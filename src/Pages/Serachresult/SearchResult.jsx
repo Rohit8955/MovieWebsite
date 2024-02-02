@@ -99,7 +99,7 @@ console.log(data)
               </InfiniteScroll>
               </div>
             ):(
-              <div className=' flex flex-col md:flex-row items-center justify-center'>
+              <div className=' h-[100%] flex flex-col md:flex-row  items-center justify-center'>
                 <img className='h-[300px] md:h-[500px]' src={noresultimg} alt="" />
                 <h1 className='text-white text-[18px] md:text-[24px] font-[600] md:mb-0 mb-[44px]'>Sorry! Result not found</h1>
               </div>
