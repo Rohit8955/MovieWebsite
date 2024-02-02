@@ -49,7 +49,7 @@ const Details = () => {
         <div className='w-full absolute inset-0 opacity-80' style={{background:"#04152d"}}></div>
         <div className='absolute opacity-layer' ></div>
 
-        <div className='w-full h-full md:top-0 top-[65px] px-[10px] md:px-0 left-0 absolute flex flex-col md:flex-row items-center md:justify-center md:gap-[45px]'>
+        <div className='w-full h-full md:top-0 px-[10px] md:px-0 top-[65px] left-0 absolute flex flex-col md:flex-row items-center md:justify-center gap-[25px] md:gap-[45px]'>
           {/* //poster section */}
           <img className=' md:w-[320px] md:h-[500px] rounded-md' src={posterpath} alt="" />
 
@@ -85,20 +85,20 @@ const Details = () => {
             </div>
 
             {/* // status, release date, runtime section */}
-            <div className='flex gap-3'>
-                <div className='flex gap-5'>
-                  <p>Status:</p>
+            <div className='flex md:flex-row flex-col gap-4'>
+                <div className='flex gap-4 md:gap-5'>
+                  <p className='text-[18px]'>Status:</p>
                   <p className='text-gray-400 font-[600]'>{data?.status}</p>
                 </div>
                 {
-                  data?.release_date ? (<div className='flex gap-5'>
-                  <p>Release Date:</p>
+                  data?.release_date ? (<div className='flex gap-4 md:gap-5'>
+                  <p className='text-[18px]'>Release Date:</p>
                   <p className='text-gray-400 font-[600]'>{dayjs(data?.release_date).format("MMM D, YYYY")}</p>
                 </div>) : null
                 }
                 {
-                  data?.runtime ? (<div className='flex gap-5'>
-                  <p>Runtime:</p>
+                  data?.runtime ? (<div className='flex gap-4 md:gap-5'>
+                  <p className='text-[18px]'>Runtime:</p>
                   <p className='text-gray-400 font-[600]'>{timeconvert(data?.runtime)}</p>
                 </div>):null
                 }
@@ -106,10 +106,10 @@ const Details = () => {
             { producers?.length>0  ?
             (<div className='flex gap-3'>
                 <h1>Producers: </h1>
-                <div className='flex gap-4'>
+                <div className='flex gap-[4px] md:gap-4'>
                   {
-                    producers?.slice(0,3).map((elem,idx)=>{
-                      return <div className='text-gray-500 font-[600]'>{elem?.name}, </div>
+                    producers?.slice(0,2).map((elem,idx)=>{
+                      return <div className=' text-gray-500 font-[600]'>{elem?.name},</div>
                     })
                   }
                 </div>
@@ -118,9 +118,9 @@ const Details = () => {
             { writers?.length>0 ?
             (<div className='flex gap-3'>
                 <h1>Writers: </h1>
-                <div className='flex gap-4'>
+                <div className='flex gap-1 md:gap-4'>
                   {
-                    writers?.slice(0,3).map((elem,idx)=>{
+                    writers?.slice(0,2).map((elem,idx)=>{
                       return <div className='text-gray-500 font-[600]'>{elem?.name}, </div>
                     })
                   }
