@@ -49,7 +49,7 @@ const Details = () => {
         <div className='w-full absolute inset-0 opacity-80' style={{background:"#04152d"}}></div>
         <div className='absolute opacity-layer' ></div>
 
-        <div className='w-full h-full md:top-0 px-[10px] md:px-0 top-[65px] left-0 absolute flex flex-col md:flex-row items-center md:justify-center gap-[25px] md:gap-[45px]'>
+        <div className='w-full h-full md:top-0 px-[10px] md:px-0 top-[65px] left-0 absolute flex flex-col md:flex-row items-center md:justify-center gap-[35px] md:gap-[45px]'>
           {/* //poster section */}
           <img className=' md:w-[320px] md:h-[500px] rounded-md' src={posterpath} alt="" />
 
