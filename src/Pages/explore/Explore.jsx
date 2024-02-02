@@ -6,8 +6,6 @@ import './explore.scss'
 import useFetch from "../../hooks/useFetch";
 import { fetchDataFromApi } from "../../utils/api";
 import Spinner from "../../components/spinner/Spinner";
-import Cardtemplate from "../../components/Cardtemplate";
-import MovieCard from "../../components/moviecard/MovieCard";
 import dayjs from "dayjs";
 import { NavLink } from "react-router-dom";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
@@ -158,7 +156,7 @@ const Explore = () => {
                                     if(!name) name = elem?.title
                                     return (
                                       
-                                        <NavLink link to={`/${mediaType}/${elem?.id}`} key={index}>
+                                        <NavLink link to={`/${mediaType }/${elem?.id}`} key={index}>
                                             <div className='flex flex-col h-[320px] md:h-[470px] gap-[16px] md:gap-8 relative '>
                                                 <div className=' min-h-[250px] max-h-[250px] min-w-[155px]  md:min-h-[350px] md:min-w-[237px] overflow-hidden rounded-md hover:cursor-pointer relative '>
                                                     
