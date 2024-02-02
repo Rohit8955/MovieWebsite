@@ -5,13 +5,13 @@ import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch'
 import { useSelector } from 'react-redux';
 import './../Home/herobanner/herobanner.scss'
-import Genres from '../Home/herobanner/genres/Genres';
 import dayjs from 'dayjs';
 import { PlayIcon } from './Playbutton';
 import TopCast from './TopCast';
 import Videos from './Videos';
 import Similar from './Similar';
 import Recomended from './Recomended';
+import noposterimg from './../../../no-poster.png'
 
 const Details = () => {
   const { mediaType, id } = useParams();
@@ -32,7 +32,8 @@ const Details = () => {
 
    console.log(producers)
   const backdroppath = url.backdrop + data?.backdrop_path;
-  const posterpath = url.poster + data?.poster_path;
+  let posterpath = url.poster + data?.poster_path;
+  if(!data?.poster_path) posterpath = noposterimg;
   const rating = data?.vote_average
   const rate = ("" + rating).slice(0,3);
 

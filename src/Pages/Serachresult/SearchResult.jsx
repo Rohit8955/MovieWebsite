@@ -7,10 +7,8 @@ import { useSelector } from 'react-redux'
 import dayjs from 'dayjs'
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import useFetch from '../../hooks/useFetch'
 import Spinner from '../../components/spinner/Spinner'
 import { useEffect } from 'react'
-import Cardtemplate from '../../components/Cardtemplate'
 import noposterimg from './../../../no-poster.png'
 import { NavLink } from 'react-router-dom'
 const SearchResult = () => {

@@ -23,6 +23,7 @@ const HeroBanner = () => {
   
     const updateBackground = setInterval(()=>{
 
+
       const bg = url.backdrop + data?.results?.[index]?.backdrop_path;
       setbackground(bg);
   
@@ -55,7 +56,7 @@ const HeroBanner = () => {
   return (
     <div className='relative'>
       {/* <h1 className='md:text-white'>hii i am heroo banner</h1> */}
-      <Img className='w-screen object-cover object-center h-[350px] md:h-[650px] ' src={background} />
+      <Img className='w-screen object-cover object-center h-[350px] md:h-[650px] ' src={data?.results?.[index]?.backdrop_path?background:null} />
        
        <div className=' absolute h-[350px] md:h-[650px] inset-0 bg-black opacity-60 '></div>
        <div className='opacity-layer'></div>

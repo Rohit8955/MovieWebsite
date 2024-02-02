@@ -1,12 +1,10 @@
 import React from 'react'
-import Img from './LazyLoadImage/Img'
 import dayjs from 'dayjs'
 import Genres from '../Pages/Home/herobanner/genres/Genres';
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import './Header/header.scss'
 import { NavLink } from 'react-router-dom';
-// import {url,genres} from './../store/homeslice'
 import { useSelector } from 'react-redux';
 const Cardtemplate = (props) => {
     const rate = "" + props.rating;
